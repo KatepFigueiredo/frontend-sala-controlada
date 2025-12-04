@@ -1,0 +1,13 @@
+{
+  "name": "sala-controlada-frontend",
+  "version": "1.0.0",
+  "description": "Frontend para controlo de acesso",
+  "type": "module",
+  "scripts": {
+    "start": "npx http-server -p 3000 -c-1",
+    "dev": "npx http-server -p 3000 -c-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
