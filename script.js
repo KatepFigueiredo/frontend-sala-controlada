@@ -22,7 +22,8 @@ document.getElementById('btn-limpar').addEventListener('click', limparLog);
   atualizar();
   setInterval(atualizar, 2000);
   
-  // ========== POLLING PARA RECEBER EVENTOS DO BACKEND ==========
+  // polling para receber eventos do backend
+
   setInterval(function() {
     fetch(`${API_URL}/ultimo_evento`)
       .then(r => {
@@ -42,7 +43,7 @@ document.getElementById('btn-limpar').addEventListener('click', limparLog);
 });
 
 
-// ========== PERSISTÊNCIA DE DADOS (localStorage) ==========
+// persistencia dos dados (localStorage)
 
 
 function carregarDadosArmazenados() {
@@ -101,7 +102,7 @@ function guardarDados() {
 }
 
 
-// ========== FUNÇÕES DE CONTROLO ==========
+//funcoes de contolo
 
 
 function ativarSaida() {
@@ -157,7 +158,7 @@ function atualizar() {
 }
 
 
-// ========== SISTEMA DE LOGS MELHORADO ==========
+//logs
 
 
 function obterDataHoraFormatada() {
@@ -184,7 +185,7 @@ function log(mensagem) {
   const dataHora = obterDataHoraFormatada();
   p.textContent = `${dataHora} ${mensagem}`;
   
-  // Adicionar classe CSS baseada no tipo de mensagem para styling opcional
+ 
   if (mensagem.includes('Entrada')) {
     p.className = 'entrada';
   } else if (mensagem.includes('Saida')) {
@@ -219,10 +220,10 @@ function limparLog() {
 }
 
 
-// ========== LOGGING REMOTE - Receber logs do Arduino via Backend ==========
 
 
-// Esta funcao sera chamada pelo backend quando houver novos eventos do Arduino
+
+// Esta funcao vai serchamada pelo backend quando houver novos eventos do Arduino
 function adicionarLogDoArduino(tipo, dados) {
   switch(tipo) {
     case 'rfid_permitido':
